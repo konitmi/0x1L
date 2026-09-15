@@ -1,0 +1,10 @@
+/* 0x1L — by glyphex
+   The zero is rendered in JetBrains Mono, a font with a dot built directly
+   into its "0" glyph — so the character itself just looks different, with
+   nothing drawn on top of it. Everything else on the page is untouched. */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
+
+.cfz-zero {
+  font-family: 'JetBrains Mono', 'Cascadia Code', 'Consolas', 'SF Mono', 'Menlo', monospace;
+}

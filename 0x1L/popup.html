@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>0x1L — by glyphex</title>
+<style>
+  body {
+    width: 260px;
+    margin: 0;
+    background: #14171B;
+    color: #EDEFF2;
+    font-family: -apple-system, "Space Grotesk", sans-serif;
+  }
+  .pad { padding: 16px; }
+  h1 {
+    font-size: 14px;
+    margin: 0 0 4px;
+    font-weight: 700;
+  }
+  p.sub {
+    margin: 0 0 16px;
+    font-size: 11.5px;
+    color: #8991A0;
+    line-height: 1.4;
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-top: 1px solid #262B33;
+    font-size: 12.5px;
+  }
+  .switch {
+    position: relative;
+    width: 34px;
+    height: 19px;
+    flex-shrink: 0;
+  }
+  .switch input { opacity: 0; width: 0; height: 0; }
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: #333A44;
+    border-radius: 20px;
+    transition: 0.15s;
+  }
+  .slider::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: 2.5px;
+    top: 2.5px;
+    background: #EDEFF2;
+    border-radius: 50%;
+    transition: 0.15s;
+  }
+  input:checked + .slider { background: #4C8CB0; }
+  input:checked + .slider::before { transform: translateX(15px); }
+
+  .sample {
+    margin-top: 14px;
+    padding: 10px;
+    background: #0E1013;
+    border: 1px solid #262B33;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0.04em;
+  }
+  .hint {
+    margin-top: 10px;
+    font-size: 10.5px;
+    color: #8991A0;
+    line-height: 1.4;
+  }
+</style>
+</head>
+<body>
+  <div class="pad">
+    <h1>0x1L</h1>
+    <p class="sub">Renders "0" in a dotted-zero font as you browse. Everything else stays normal.</p>
+
+    <div class="row">
+      <span>Enabled</span>
+      <label class="switch">
+        <input type="checkbox" id="enabledToggle" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="sample" id="sample" style="font-family:'JetBrains Mono',monospace;">0 vs O</div>
+    <p class="hint">Refresh open tabs after changing a setting for it to take effect.</p>
+    <p class="hint" style="margin-top:6px;opacity:0.6;">0x1L by glyphex</p>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

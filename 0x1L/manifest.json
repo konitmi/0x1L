@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "0x1L",
+  "version": "1.0.0",
+  "description": "By glyphex — renders the digit 0 in a dotted-zero font as you browse, so you never confuse it with the letter O in an address, code, or username again.",
+  "author": "glyphex",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "0x1L — by glyphex",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["style.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
